@@ -23,13 +23,14 @@ import okhttp3.Response;
 
 public class SearchListActivity extends AppCompatActivity {
     private MovieRequest movieRequest;
+    private SearchView searchView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        SearchView searchView = findViewById(R.id.searchView);
+        searchView = findViewById(R.id.searchView);
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -46,35 +47,16 @@ public class SearchListActivity extends AppCompatActivity {
     }
 
     private void get() {
-        String API_KEY = "141a479ec62f7a96621da45ebf6b926f";
-        String BASE_URL = "https://api.themoviedb.org/3/";
-
-        OkHttpClient client = new OkHttpClient();
-
-        Request request = new Request.Builder()
-                .url(BASE_URL + "search/movie?query=back%20to%20the%20future&api_key=" + API_KEY)
-                .build();
-
-        client.newCall(request).enqueue(new Callback() {
+        Toast.makeText(SearchListActivity.this, "Searching...", Toast.LENGTH_SHORT).show();
+        movieRequest.searchMovies(searchView.getQuery().toString(), this, new MovieRequest.OnApiResultListener() {
             @Override
-            public void onFailure(@NonNull Call call, @NonNull IOException e) {
-                e.printStackTrace();
-                Toast.makeText(SearchListActivity.this, "Erro na requisição", Toast.LENGTH_SHORT).show();
+            public void onSuccess(String result) {
+                Toast.makeText(SearchListActivity.this, result, Toast.LENGTH_SHORT).show();
             }
 
             @Override
-            public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        try {
-                            String json = response.body().string();
-                            Toast.makeText(SearchListActivity.this, json, Toast.LENGTH_SHORT).show();
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                    }
-                });
+            public void onFailure(String errorMessage) {
+                Toast.makeText(SearchListActivity.this, errorMessage, Toast.LENGTH_SHORT).show();
             }
         });
     }
