@@ -1,4 +1,4 @@
-package br.ufrn.imd.movielist.activity.movieHelper;
+package br.ufrn.imd.movielist.main.movieHelper;
 
 public class Movie {
     private int id;

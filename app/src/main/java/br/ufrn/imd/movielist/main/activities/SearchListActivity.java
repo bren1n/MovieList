@@ -1,10 +1,10 @@
-package br.ufrn.imd.movielist.activity.activities;
+package br.ufrn.imd.movielist.main.activities;
 
 
-import br.ufrn.imd.movielist.activity.movieHelper.Movie;
-import br.ufrn.imd.movielist.activity.movieHelper.MovieAdapter;
-import br.ufrn.imd.movielist.activity.movieHelper.RecyclerViewInterface;
-import br.ufrn.imd.movielist.activity.movieHelper.MovieRequest;
+import br.ufrn.imd.movielist.main.movieHelper.Movie;
+import br.ufrn.imd.movielist.main.movieHelper.MovieAdapter;
+import br.ufrn.imd.movielist.main.movieHelper.RecyclerViewInterface;
+import br.ufrn.imd.movielist.main.movieHelper.MovieRequest;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;

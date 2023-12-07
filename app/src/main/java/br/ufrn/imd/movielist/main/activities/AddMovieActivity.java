@@ -1,4 +1,4 @@
-package br.ufrn.imd.movielist.activity.activities;
+package br.ufrn.imd.movielist.main.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,8 +7,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-
-import org.w3c.dom.Text;
 
 import br.ufrn.imd.movielist.R;
 

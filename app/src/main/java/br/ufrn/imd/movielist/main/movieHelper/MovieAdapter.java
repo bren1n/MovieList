@@ -1,4 +1,4 @@
-package br.ufrn.imd.movielist.activity.movieHelper;
+package br.ufrn.imd.movielist.main.movieHelper;
 
 import android.content.Context;
 import android.view.LayoutInflater;
