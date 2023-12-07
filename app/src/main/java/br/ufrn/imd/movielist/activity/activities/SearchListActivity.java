@@ -98,13 +98,13 @@ public class SearchListActivity extends AppCompatActivity implements RecyclerVie
 
     @Override
     public void onItemClick(int position) {
-        Intent intent = new Intent(SearchListActivity.this, AddMovieActivity.class);
-        Toast.makeText(SearchListActivity.this, movieList.get(position).getName(), Toast.LENGTH_SHORT).show();
-//        intent.putExtra("movieId", movieList.get(position).getId());
-//        intent.putExtra("movieName", movieList.get(position).getName());
-//        intent.putExtra("movieDesc", movieList.get(position).getDesc());
-//        intent.putExtra("movieReleaseDate", movieList.get(position).getReleaseDate());
-//        intent.putExtra("movieImageUrl", movieList.get(position).getImageUrl());
+        Intent intent = new Intent(getApplicationContext(), AddMovieActivity.class);
+//        Toast.makeText(getApplicationContext(), movieList.get(position).getName(), Toast.LENGTH_SHORT).show();
+        intent.putExtra("movieId", movieList.get(position).getId());
+        intent.putExtra("movieName", movieList.get(position).getName());
+        intent.putExtra("movieDesc", movieList.get(position).getDesc());
+        intent.putExtra("movieReleaseDate", movieList.get(position).getReleaseDate());
+        intent.putExtra("movieImageUrl", movieList.get(position).getImageUrl());
         startActivity(intent);
     }
 }

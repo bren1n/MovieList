@@ -24,23 +24,23 @@ public class AddMovieActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_movie);
 
-//        name = (TextView) findViewById(R.id.movieName);
-//        releaseDate = (TextView) findViewById(R.id.movieReleaseDate);
-//        desc = (TextView) findViewById(R.id.movieDesc);
-//        image = (ImageView) findViewById(R.id.movieImage);
+        name = (TextView) findViewById(R.id.movieName);
+        releaseDate = (TextView) findViewById(R.id.movieReleaseDate);
+        desc = (TextView) findViewById(R.id.movieDesc);
+        image = (ImageView) findViewById(R.id.movieImage);
 
-//        Bundle extras = getIntent().getExtras();
-//        if (extras != null) {
-//            String movieName = extras.getString("movieName");
-//            String movieDesc = extras.getString("movieDesc");
-//            String movieReleaseDate = extras.getString("movieReleaseDate");
-//            String movieImageUrl = extras.getString("movieImageUrl");
-//
-//            name.setText(movieName);
-//            releaseDate.setText(movieReleaseDate);
-//            desc.setText(movieDesc);
-////            Glide.with(AddMovieActivity.this).load(movieImageUrl).into(image);
-//        }
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            String movieName = extras.getString("movieName");
+            String movieDesc = extras.getString("movieDesc");
+            String movieReleaseDate = extras.getString("movieReleaseDate");
+            String movieImageUrl = extras.getString("movieImageUrl");
+
+            name.setText(movieName);
+            releaseDate.setText(movieReleaseDate);
+            desc.setText(movieDesc);
+            Glide.with(AddMovieActivity.this).load(movieImageUrl).into(image);
+        }
     }
 
 }
