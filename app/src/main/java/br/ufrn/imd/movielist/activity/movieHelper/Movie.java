@@ -4,11 +4,16 @@ public class Movie {
     private int id;
     private String name;
     private String desc;
+    private String releaseDate;
+    private String imageUrl;
 
-    public Movie(int id, String name, String desc) {
+
+    public Movie(int id, String name, String releaseDate, String desc, String imageUrl) {
         this.id = id;
         this.name = name;
+        this.releaseDate = releaseDate;
         this.desc = desc;
+        this.imageUrl = imageUrl;
     }
 
     public int getId() {
@@ -27,6 +32,10 @@ public class Movie {
         this.name = name;
     }
 
+    public String getReleaseDate() { return releaseDate; }
+
+    public void setReleaseDate(String releaseDate) { this.releaseDate = releaseDate; }
+
     public String getDesc() {
         return desc;
     }
@@ -34,6 +43,10 @@ public class Movie {
     public void setDesc(String desc) {
         this.desc = desc;
     }
+
+    public String getImageUrl() { return imageUrl; }
+
+    public void setImageUrl(String imageUrl) { this.imageUrl = imageUrl; }
 
     public Movie(int id) {
         this.id = id;
