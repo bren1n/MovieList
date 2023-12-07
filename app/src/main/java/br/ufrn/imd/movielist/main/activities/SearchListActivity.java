@@ -68,7 +68,7 @@ public class SearchListActivity extends AppCompatActivity implements RecyclerVie
                         Movie movie = new Movie(
                             temp.getInt("id"),
                             temp.getString("title"),
-                            temp.optString("release_date").isEmpty() ? "No release date" : temp.optString("release_date"),
+                            temp.optString("release_date").isEmpty() ? "No release date" : temp.optString("release_date").toString().substring(0,4),
                             temp.getString("overview").isEmpty() ? "No description" : temp.getString("overview"),
                     "https://image.tmdb.org/t/p/w500" + temp.getString("poster_path")
                         );
