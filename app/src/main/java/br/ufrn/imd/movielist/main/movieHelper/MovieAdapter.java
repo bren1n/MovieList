@@ -45,7 +45,9 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Movie movie = movieList.get(position);
         holder.name.setText(movie.getName());
-        holder.releaseDate.setText(movie.getReleaseDate());
+
+        String releaseDate = movie.getReleaseDate() == 0 ? "No release date" : String.valueOf(movie.getReleaseDate());
+        holder.releaseDate.setText(releaseDate);
 
         Glide.with(context).load(movie.getImageUrl()).into(holder.imageUrl);
     }

@@ -4,16 +4,20 @@ public class Movie {
     private int id;
     private String name;
     private String desc;
-    private String releaseDate;
+    private int releaseDate;
     private String imageUrl;
+    private int rate;
+    private String review;
 
 
-    public Movie(int id, String name, String releaseDate, String desc, String imageUrl) {
+    public Movie(int id, String name, int releaseDate, String desc, String imageUrl, int rate, String review) {
         this.id = id;
         this.name = name;
         this.releaseDate = releaseDate;
         this.desc = desc;
         this.imageUrl = imageUrl;
+        this.rate = rate;
+        this.review = review;
     }
 
     public int getId() {
@@ -32,9 +36,9 @@ public class Movie {
         this.name = name;
     }
 
-    public String getReleaseDate() { return releaseDate; }
+    public int getReleaseDate() { return releaseDate; }
 
-    public void setReleaseDate(String releaseDate) { this.releaseDate = releaseDate; }
+    public void setReleaseDate(int releaseDate) { this.releaseDate = releaseDate; }
 
     public String getDesc() {
         return desc;
@@ -47,6 +51,14 @@ public class Movie {
     public String getImageUrl() { return imageUrl; }
 
     public void setImageUrl(String imageUrl) { this.imageUrl = imageUrl; }
+
+    public int getRate() { return rate; }
+
+    public void setRate(int rate) { this.rate = rate; }
+
+    public String getReview() { return review; }
+
+    public void setReview(String review) { this.review = review; }
 
     public Movie(int id) {
         this.id = id;

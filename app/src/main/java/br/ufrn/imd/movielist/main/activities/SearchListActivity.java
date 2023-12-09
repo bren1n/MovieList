@@ -68,9 +68,11 @@ public class SearchListActivity extends AppCompatActivity implements RecyclerVie
                         Movie movie = new Movie(
                             temp.getInt("id"),
                             temp.getString("title"),
-                            temp.optString("release_date").isEmpty() ? "No release date" : temp.optString("release_date").toString().substring(0,4),
+                            temp.getString("release_date").isEmpty() ? 0 : Integer.parseInt(temp.optString("release_date").toString().substring(0,4)),
                             temp.getString("overview").isEmpty() ? "No description" : temp.getString("overview"),
-                    "https://image.tmdb.org/t/p/w500" + temp.getString("poster_path")
+                    "https://image.tmdb.org/t/p/w500" + temp.getString("poster_path"),
+                                0,
+                                ""
                         );
                         movieList.add(movie);
                     }
@@ -82,7 +84,6 @@ public class SearchListActivity extends AppCompatActivity implements RecyclerVie
                     //Configurar Recyclerview
                     RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
                     recyclerView.setLayoutManager(layoutManager);
-                    recyclerView.addItemDecoration(new DividerItemDecoration(SearchListActivity.this, LinearLayout.VERTICAL));
                     recyclerView.setAdapter(adapter);
                 } catch (Throwable t) {
                     return;
